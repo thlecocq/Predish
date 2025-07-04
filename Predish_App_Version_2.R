@@ -173,6 +173,9 @@ calculate_overlap <- function(min_prey, max_prey, min_size, max_size) {
   if (overlap_min < overlap_max) {
     return((overlap_max - overlap_min) / (max_size - min_size))
   }
+  else if (overlap_min == overlap_max){
+    return(1)
+  }
   else {
     return(0)
   }
