@@ -272,7 +272,7 @@ server <- function(input, output, session) {
 
 		#Replace all empty developmentType by Unknown
 		inputDataFrame[2][is.na(inputDataFrame[2])] <- "Unknown"
-		#Replace all empty Piscivore bu Unknown
+		#Replace all empty Piscivore by Unknown
 		inputDataFrame[5][is.na(inputDataFrame[5])] <- "Unknown"
 
 		columnsNames=colnames(inputDataFrame)
@@ -463,7 +463,7 @@ server <- function(input, output, session) {
 		}
 		output$InfoText <- renderUI({HTML(infoMsg)})
 	})
-	#UNABLE THE CUTOFF PANEL WHEN CLICKING ON CHECKBOX
+	#DISABLE THE CUTOFF PANEL WHEN CLICKING ON CHECKBOX
 	observeEvent(input$predationCutoffCheckbox, {
 		toggleState("predationCutoffPanel", condition = input$predationCutoffCheckbox)	
 	})
